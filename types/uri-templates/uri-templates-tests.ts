@@ -3,7 +3,14 @@ import URITemplate = utmpl.URITemplate;
 
 let str: string;
 let u: URITemplate;
-const obj = { test: 'test1' };
+const obj = {
+    stringValue: 'test1',
+    numberValue: 1,
+    booleanValue: true,
+    arrayOfStrings: ['test1', 'test2', 'test3'],
+    arrayOfNumbers: [1, 3, 5],
+    arrayOfBooleans: [true, false]
+};
 
 u = utmpl(str);
 

@@ -6,12 +6,14 @@
 
 declare function utpl(template: string): utpl.URITemplate;
 
+declare type UriFillObject = { [key: string]: boolean | string | number | boolean[] | string[] | number[] };
+
 declare namespace utpl {
     export interface URITemplate {
-        fillFromObject(vars: { [key: string]: string }): string;
+        fillFromObject(vars: UriFillObject): string;
         fill(callback: (varName: string) => string): string;
-        fill(vars: { [key: string]: string }): string;
-        fromUri(uri: string): { [key: string]: string };
+        fill(vars: UriFillObject): string;
+        fromUri(uri: string): UriFillObject;
         varNames: string[];
         template: string;
     }
